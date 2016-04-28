@@ -13,7 +13,7 @@
  *  the purpose of the program. The next few lines give a sample execution
  *  of the program and the resulting output. We will always include such 
  *  lines in our programs and encourage you to do the same.
- *
+ *  This is helpful description.
  ******************************************************************************/
 
 public class HelloWorld {
