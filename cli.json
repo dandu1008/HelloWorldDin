@@ -1,0 +1,19 @@
+
+
+{
+  "webhook": {
+    "name": "testpipeline--Source--dandu1008HelloWorldDin--1838187307",
+    "targetPipeline": "test-pipeline",
+    "targetAction": "Source",
+    "filters": [{
+        "jsonPath": "$.ref",
+        "matchEquals": "refs/heads/{Branch}"
+      }
+    ],
+    "authentication": "GITHUB_HMAC",
+    "authenticationConfiguration": {
+      "SecretToken": "39058597443707616231330342389439866693082704480632971681552102488019202263073038791940221186358710"
+    }
+  }
+}
+
