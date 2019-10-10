@@ -4,7 +4,12 @@ set -x
 
 valid_branches=("staging" "master")
 tag=$(echo $CODEBUILD_WEBHOOK_TRIGGER | cut -d / -f2)
+git log -1 "refs/tags/$tag" --decorate=short
+echo "test0"
+git log -1 "refs/tags/$tag" --decorate=short | awk -F'[()]' '{print $2}'
+echo "test1"
 vars=$(git log -1 "refs/tags/$tag" --decorate=short | awk -F'[()]' '{print $2}')
+echo "test2"
 IFS=, read -ra arr <<< "$vars"
 echo $vars
 branch=$(echo "${arr[@]:(-1)}" | sed 's/ //g')
