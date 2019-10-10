@@ -16,4 +16,9 @@ do
         break
     fi
 done
-if [ -z $BRANCH ]; then echo "tag $tag is not belongs to \"${branches[*]}\""; else echo "tag $tag is valid to deploy"; fi
+if [ -z $BRANCH ]; then 
+   echo "tag $tag is not belongs to \"${branches[*]}\""; 
+else 
+   echo "tag $tag is valid to deploy"; 
+   echo "export BRANCH=$branch" >> ./variable.sh
+fi
