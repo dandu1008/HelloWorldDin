@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 valid_branches=("staging" "master")
 tag=$(echo $CODEBUILD_WEBHOOK_TRIGGER | cut -d / -f2)
 vars=$(git log -1 "refs/tags/$tag" --decorate=short | awk -F'[()]' '{print $2}')
